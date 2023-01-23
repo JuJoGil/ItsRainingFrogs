@@ -7,17 +7,8 @@ public class WinGame : MonoBehaviour
 {
     public GameObject winText, point, camara, pointCamera;
     public float velocity;
-    public bool isFinishing;
 
-    public static WinGame instance;
-
-    private void Awake()
-    {
-        if (instance == null)
-        {
-            instance = this;
-        }
-    }
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -28,11 +19,11 @@ public class WinGame : MonoBehaviour
     void Update()
     {
 
-        if (isFinishing)
+        if (Controller.Singleton.IsFinishing)
         {
-            MoveCharacter.instance.player.transform.position = Vector2.MoveTowards(MoveCharacter.instance.player.transform.position, point.transform.position, velocity * Time.deltaTime);
+            Controller.Singleton.Player.position = Vector2.MoveTowards(Controller.Singleton.Player.position, point.transform.position, velocity * Time.deltaTime);
             //camara.transform.position = Vector2.MoveTowards(camara.transform.position, pointCamera.transform.position, velocity * Time.deltaTime);
-            if (MoveCharacter.instance.player.transform.position == point.transform.position)
+            if (Controller.Singleton.Player.position == point.transform.position)
             {
                 SceneManager.LoadScene("SegundoNivel");
             }
@@ -42,7 +33,7 @@ public class WinGame : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
 
-        isFinishing = true;
+        Controller.Singleton.IsFinishing = true;
 
     }
 }

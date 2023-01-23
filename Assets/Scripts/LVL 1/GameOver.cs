@@ -5,20 +5,14 @@ using UnityEngine.SceneManagement;
 
 public class GameOver : MonoBehaviour
 {
-    public bool isDead;
+    
     public GameObject text, point;
     public float velocity;
-    public static GameOver instance;
+    
 
     public float time, timeMax;
 
-    private void Awake()
-    {
-        if (instance == null)
-        {
-            instance = this;
-        }
-    }
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -28,9 +22,9 @@ public class GameOver : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (isDead)
+        if (Controller.Singleton.IsDead)
         {
-            MoveCharacter.instance.player.transform.position = Vector2.MoveTowards(MoveCharacter.instance.player.transform.position, point.transform.position, velocity * Time.deltaTime);
+            Controller.Singleton.Player.position = Vector2.MoveTowards(Controller.Singleton.Player.position, point.transform.position, velocity * Time.deltaTime);
             //camara.transform.position = Vector2.MoveTowards(camara.transform.position, pointCamera.transform.position, velocity * Time.deltaTime);
             time = time + Time.deltaTime;
             if (time >= timeMax)
@@ -42,6 +36,6 @@ public class GameOver : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        isDead = true;
+        Controller.Singleton.IsDead = true;
     }
 }

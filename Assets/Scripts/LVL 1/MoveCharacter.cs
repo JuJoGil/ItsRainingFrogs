@@ -9,15 +9,7 @@ public class MoveCharacter : MonoBehaviour
     public float velocity;
     public bool isMovingIz, isMovingDer, moveCenIz, moveDerCen, moveIzCen, moveCenDer;
 
-    public static MoveCharacter instance;
-
-    private void Awake()
-    {
-        if (instance == null)
-        {
-            instance = this;
-        }
-    }
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -27,15 +19,8 @@ public class MoveCharacter : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //if (Input.GetKeyDown(KeyCode.Z) && !isMovingDer && player.transform.position != pointIzq.transform.position)
-        //{
-        //    isMovingIz = true;
-        //}
-        //if (Input.GetKeyDown(KeyCode.X) && !isMovingIz && player.transform.position != pointDer.transform.position)
-        //{
-        //    isMovingDer = true;
-        //}
 
+        Controller.Singleton.Player = player.transform;
         if (isMovingIz == true)
         {
             MovePlayerIz();
@@ -45,6 +30,11 @@ public class MoveCharacter : MonoBehaviour
         {
             MovePlayerDer();
         }
+    }
+
+    private void LateUpdate()
+    {
+        player.transform.position = Controller.Singleton.Player.position;
     }
 
     private void MovePlayerIz()

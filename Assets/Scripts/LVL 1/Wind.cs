@@ -21,7 +21,7 @@ public class Wind : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!WinGame.instance.isFinishing || GameOver.instance.isDead)
+        if (!Controller.Singleton.IsFinishing || Controller.Singleton.IsDead)
         {
             if (timeController)
             {
@@ -55,7 +55,7 @@ public class Wind : MonoBehaviour
                     DerWind = false;
                     if (player.transform.position == points[n].transform.position)
                     {
-                        MoveMap.instance.velocity = 15;
+                        Controller.Singleton.Velocity = 15;
 
 
                     }

@@ -6,17 +6,8 @@ public class MoveMap : MonoBehaviour
 {
     // Start is called before the first frame update
     public GameObject creditos, puntoCreditos;
-    public float velocity, restaVelocity;
-    public static MoveMap instance;
-
-    private void Awake()
-    {
-        if (instance == null)
-        {
-            instance = this;
-        }
-    }
-
+    public float restaVelocity;
+    
         // Start is called before the first frame update
     void Start()
     {
@@ -26,10 +17,10 @@ public class MoveMap : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!WinGame.instance.isFinishing && !GameOver.instance.isDead)
+        if (!Controller.Singleton.IsFinishing && !Controller.Singleton.IsDead)
         {
-            velocity = velocity - restaVelocity;
-            creditos.transform.position = Vector3.MoveTowards(creditos.transform.position, puntoCreditos.transform.position, velocity * Time.deltaTime);
+            Controller.Singleton.Velocity = Controller.Singleton.Velocity - restaVelocity;
+            creditos.transform.position = Vector3.MoveTowards(creditos.transform.position, puntoCreditos.transform.position, Controller.Singleton.Velocity * Time.deltaTime);
         }
         
     }

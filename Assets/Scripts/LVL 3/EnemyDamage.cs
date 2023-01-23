@@ -37,19 +37,19 @@ public class EnemyDamage : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(LifePlayer.instance.life == 3)
+        if(Controller.Singleton.Life == 3)
         {
             life3.SetActive(false);
         }
-        else if (LifePlayer.instance.life == 2)
+        else if (Controller.Singleton.Life == 2)
         {
             life2.SetActive(false);
         }
-        else if (LifePlayer.instance.life == 1)
+        else if (Controller.Singleton.Life == 1)
         {
             life1.SetActive(false);
         }
-        LifePlayer.instance.life = LifePlayer.instance.life - 1;
+        Controller.Singleton.Life = Controller.Singleton.Life - 1;
         this.gameObject.GetComponent<BoxCollider2D>().enabled = false;
     }
 }
