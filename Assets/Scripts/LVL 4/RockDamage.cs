@@ -15,8 +15,15 @@ public class RockDamage : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        if (!Controller.Singleton.StopRock)
+        {
+            this.transform.position = Vector3.MoveTowards(this.transform.position, point.transform.position, velocity * Time.deltaTime);
+        } else
+        {
+            this.gameObject.GetComponent<CircleCollider2D>().enabled = false;
+        }
         
-        this.transform.position = Vector3.MoveTowards(this.transform.position, point.transform.position, velocity * Time.deltaTime);
         if (this.transform.position.x <= point.transform.position.x)
         {
             this.gameObject.SetActive(false);
@@ -26,7 +33,10 @@ public class RockDamage : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("He entrado");
+        if (collision.gameObject.CompareTag("Player"))
+        {
+
+        }
         if (Controller.Singleton.Life == 3)
         {
             life3.SetActive(false);
@@ -40,7 +50,6 @@ public class RockDamage : MonoBehaviour
             life1.SetActive(false);
         }
         Controller.Singleton.Life = Controller.Singleton.Life - 1;
-        //this.gameObject.GetComponent<CircleCollider2D>().enabled = false;
 
     }
 

@@ -5,11 +5,12 @@ using UnityEngine.SceneManagement;
 
 public class Jump : MonoBehaviour
 {
+    public Event youWin;
     Rigidbody2D _rb;
-    public float power, time, timeMax;
+    public float power, time, timeMax, time2, timeMax2;
     public Vector3 inicial;
     public GameObject player;
-    public bool onAir;
+    public bool onAir, finish;
 
     public Animator anim;
     // Start is called before the first frame update
@@ -21,10 +22,24 @@ public class Jump : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
         time = time + Time.deltaTime;
         if (time >= timeMax)
         {
-            SceneManager.LoadScene("Intro");
+            Controller.Singleton.StopRock = true;
+            time2 = time2 + Time.deltaTime;
+            if (!finish)
+            {
+                youWin.Ocurred(this.gameObject);
+                finish = true;
+            }
+            
+            if (time2 >= timeMax2)
+            {
+                SceneManager.LoadScene("Intro");
+            }
+            
+
         }
         if (player.transform.position == inicial)
         {

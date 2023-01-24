@@ -44,6 +44,14 @@ public sealed class Controller
         set { _player = value; }
     }
 
+    //Controlador y acceso para detener la roca
+    private bool _stopRock;
+    public bool StopRock
+    {
+        get { return _stopRock; }
+        set { _stopRock = value; }
+    }
+
     //Creamos una referencia estática que apunta al Singleton
     private static Controller instance;
 
