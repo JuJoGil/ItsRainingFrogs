@@ -37,6 +37,7 @@ public class EnemyDamage : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        
         if(Controller.Singleton.Life == 3)
         {
             life3.SetActive(false);
