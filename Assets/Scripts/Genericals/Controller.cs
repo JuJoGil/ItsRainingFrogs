@@ -52,6 +52,13 @@ public sealed class Controller
         set { _stopRock = value; }
     }
 
+    private int _bucles;
+    public int Bucles
+    {
+        get { return _bucles; }
+        set { _bucles = value; }
+    }
+
     //Creamos una referencia estática que apunta al Singleton
     private static Controller instance;
 

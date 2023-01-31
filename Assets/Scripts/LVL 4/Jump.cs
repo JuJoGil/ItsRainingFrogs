@@ -36,7 +36,7 @@ public class Jump : MonoBehaviour
             
             if (time2 >= timeMax2)
             {
-                SceneManager.LoadScene("Intro");
+                SceneManager.LoadScene("CinematicBucle");
             }
             
 

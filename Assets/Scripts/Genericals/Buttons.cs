@@ -11,4 +11,8 @@ public class Buttons : MonoBehaviour
         SceneManager.LoadScene("InitialCinematic");
     }
 
+    public void BackToMenu()
+    {
+        SceneManager.LoadScene("Intro");
+    }
 }
