@@ -19,7 +19,7 @@ public class Cloud : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         if(cloud.transform.localScale.x < 4 && cloud.transform.localScale.x > 0.2f)
         {

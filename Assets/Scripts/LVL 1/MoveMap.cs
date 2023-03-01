@@ -15,7 +15,7 @@ public class MoveMap : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         if (!Controller.Singleton.IsFinishing && !Controller.Singleton.IsDead)
         {

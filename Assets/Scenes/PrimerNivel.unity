@@ -3682,7 +3682,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   creditos: {fileID: 1787333264}
   puntoCreditos: {fileID: 1908799527}
-  restaVelocity: 0.01
+  restaVelocity: 0.05
 --- !u!1 &783419116
 GameObject:
   m_ObjectHideFlags: 0

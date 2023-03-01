@@ -17,6 +17,7 @@ public class Jump : MonoBehaviour
     void Start()
     {
         _rb = GetComponent<Rigidbody2D>();
+        Controller.Singleton.StopRock = false;
     }
 
     // Update is called once per frame
@@ -55,6 +56,10 @@ public class Jump : MonoBehaviour
 
     public void JumpFrog()
     {
-        _rb.velocity = new Vector2(_rb.velocity.x, power);
+        if (!onAir)
+        {
+            _rb.velocity = new Vector2(_rb.velocity.x, power);
+        }
+        
     }
 }

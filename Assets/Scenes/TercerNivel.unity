@@ -858,7 +858,7 @@ MonoBehaviour:
   point1: {fileID: 1250445893}
   point2: {fileID: 972923856}
   avanza: 0
-  velocity: 0.03
+  velocity: 0.15
 --- !u!61 &96513654
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3384,7 +3384,7 @@ MonoBehaviour:
   point1: {fileID: 817601196}
   point2: {fileID: 707429061}
   avanza: 0
-  velocity: 0.03
+  velocity: 0.15
 --- !u!61 &569233022
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4609,7 +4609,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.000030517578, y: -31}
+  m_AnchoredPosition: {x: 0, y: -31}
   m_SizeDelta: {x: 696.5981, y: 300.1033}
   m_Pivot: {x: 1, y: 1}
 --- !u!114 &791579741
@@ -4705,7 +4705,7 @@ MonoBehaviour:
   point1: {fileID: 1744358623}
   point2: {fileID: 1222756872}
   avanza: 0
-  velocity: 0.03
+  velocity: 0.15
 --- !u!61 &793107286
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5352,7 +5352,7 @@ MonoBehaviour:
   point1: {fileID: 1560795855}
   point2: {fileID: 596674969}
   avanza: 1
-  velocity: 0.03
+  velocity: 0.15
 --- !u!1 &957108089
 GameObject:
   m_ObjectHideFlags: 0
@@ -7887,7 +7887,7 @@ MonoBehaviour:
   point1: {fileID: 1225321930}
   point2: {fileID: 595833842}
   avanza: 1
-  velocity: 0.03
+  velocity: 0.15
 --- !u!61 &1420629029
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -8694,7 +8694,7 @@ MonoBehaviour:
   point1: {fileID: 648488300}
   point2: {fileID: 1281606297}
   avanza: 0
-  velocity: 0.03
+  velocity: 0.15
 --- !u!61 &1583341616
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -9272,7 +9272,7 @@ MonoBehaviour:
   point1: {fileID: 264606226}
   point2: {fileID: 359834676}
   avanza: 0
-  velocity: 0.03
+  velocity: 0.15
 --- !u!61 &1636794756
 BoxCollider2D:
   m_ObjectHideFlags: 0
