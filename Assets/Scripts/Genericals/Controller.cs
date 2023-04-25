@@ -59,6 +59,13 @@ public sealed class Controller
         set { _bucles = value; }
     }
 
+    private string _skin;
+    public string Skin
+    {
+        get { return _skin; }
+        set { _skin = value; }
+    }
+
     //Creamos una referencia estática que apunta al Singleton
     private static Controller instance;
 

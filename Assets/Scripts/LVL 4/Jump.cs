@@ -11,13 +11,18 @@ public class Jump : MonoBehaviour
     public Vector3 inicial;
     public GameObject player;
     public bool onAir, finish;
+    SpriteRenderer _sr;
+    public Sprite[] skins;
 
     public Animator anim;
     // Start is called before the first frame update
     void Start()
     {
+        _sr = GetComponent<SpriteRenderer>();
         _rb = GetComponent<Rigidbody2D>();
         Controller.Singleton.StopRock = false;
+
+        _sr.sprite = skins[PlayerPrefs.GetInt("Skin")];
     }
 
     // Update is called once per frame
@@ -52,6 +57,7 @@ public class Jump : MonoBehaviour
         }
 
         anim.SetBool("onAir", onAir);
+        anim.SetInteger("Skin", PlayerPrefs.GetInt("Skin"));
     }
 
     public void JumpFrog()
