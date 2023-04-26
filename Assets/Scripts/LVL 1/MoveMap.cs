@@ -11,7 +11,7 @@ public class MoveMap : MonoBehaviour
         // Start is called before the first frame update
     void Start()
     {
-
+        Controller.Singleton.Velocity = 0;
     }
 
     // Update is called once per frame

@@ -10,7 +10,10 @@ public class EnemyDamage : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        if (PlayerPrefs.GetInt("Bird") == 1)
+        {
+            velocity = velocity * 2;
+        }
     }
 
     // Update is called once per frame

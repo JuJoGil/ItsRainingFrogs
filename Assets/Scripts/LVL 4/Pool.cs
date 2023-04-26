@@ -14,6 +14,7 @@ public class Pool : MonoBehaviour
     
     public List<PoolItem> items;
     public List<GameObject> pooledItems;
+    int aux;
 
     public static Pool singleton;
 
@@ -25,11 +26,15 @@ public class Pool : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        if (PlayerPrefs.GetInt("Rock") == 1)
+        {
+            aux = 2;
+        }
         pooledItems = new List<GameObject>();
 
         foreach(PoolItem item in items)
         {
-            for(int i=0; i<item.amount; i++)
+            for(int i=0; i<item.amount+aux; i++)
             {
                 GameObject obj = Instantiate(item.prefab);
                 obj.SetActive(false);

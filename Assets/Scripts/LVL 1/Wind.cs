@@ -15,6 +15,12 @@ public class Wind : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        if (PlayerPrefs.GetInt("Wind") == 1)
+        {
+            timeMax = timeMax - 1;
+            timeMax2 = timeMax2 - 1;
+
+        }
         timeController = true;
     }
 

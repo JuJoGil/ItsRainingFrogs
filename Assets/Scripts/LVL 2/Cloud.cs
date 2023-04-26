@@ -16,6 +16,10 @@ public class Cloud : MonoBehaviour
     void Start()
     {
         bar = cloud.transform.localScale;
+        if (PlayerPrefs.GetInt("Cloud") == 1)
+        {
+            barDown = barDown * 2;
+        }
     }
 
     // Update is called once per frame

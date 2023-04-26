@@ -5,6 +5,62 @@ using UnityEngine;
 public class ShopButtons : MonoBehaviour
 {
     public GameObject shop;
+    public GameObject[] hadicaps;
+
+
+    private void Update()
+    {
+        if (PlayerPrefs.GetInt("Speed") == 0)
+        {
+            
+            hadicaps[0].SetActive(false);
+        }
+        else
+        {
+            
+            hadicaps[0].SetActive(true);
+        }
+        if (PlayerPrefs.GetInt("Rock") == 0)
+        {
+
+            hadicaps[1].SetActive(false);
+        }
+        else
+        {
+
+            hadicaps[1].SetActive(true);
+        }
+        if (PlayerPrefs.GetInt("Bird") == 0)
+        {
+
+            hadicaps[2].SetActive(false);
+        }
+        else
+        {
+
+            hadicaps[2].SetActive(true);
+        }
+        if (PlayerPrefs.GetInt("Cloud") == 0)
+        {
+
+            hadicaps[3].SetActive(false);
+        }
+        else
+        {
+
+            hadicaps[3].SetActive(true);
+        }
+        if (PlayerPrefs.GetInt("Wind") == 0)
+        {
+
+            hadicaps[4].SetActive(false);
+        }
+        else
+        {
+
+            hadicaps[4].SetActive(true);
+        }
+    }
 
     public void NormalSkin()
     {
@@ -56,6 +112,8 @@ public class ShopButtons : MonoBehaviour
         {
             PlayerPrefs.SetInt("Speed", 0);
         }
+
+        
         
     }
     public void MoreRocks()
@@ -63,43 +121,51 @@ public class ShopButtons : MonoBehaviour
         if (PlayerPrefs.GetInt("Rock") == 0)
         {
             PlayerPrefs.SetInt("Rock", 1);
+
         }
         else
         {
             PlayerPrefs.SetInt("Rock", 0);
         }
+        
     }
     public void MoreBirds()
     {
         if (PlayerPrefs.GetInt("Bird") == 0)
         {
             PlayerPrefs.SetInt("Bird", 1);
+
         }
         else
         {
             PlayerPrefs.SetInt("Bird", 0);
         }
+        
     }
     public void MoreCloud()
     {
         if (PlayerPrefs.GetInt("Cloud") == 0)
         {
             PlayerPrefs.SetInt("Cloud", 1);
+
         }
         else
         {
             PlayerPrefs.SetInt("Cloud", 0);
         }
+       
     }
     public void MoreWind()
     {
         if (PlayerPrefs.GetInt("Wind") == 0)
         {
             PlayerPrefs.SetInt("Wind", 1);
+
         }
         else
         {
             PlayerPrefs.SetInt("Wind", 0);
         }
+        
     }
 }
