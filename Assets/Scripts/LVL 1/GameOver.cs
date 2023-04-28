@@ -16,7 +16,7 @@ public class GameOver : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        Controller.Singleton.IsDead = false;
     }
 
     // Update is called once per frame

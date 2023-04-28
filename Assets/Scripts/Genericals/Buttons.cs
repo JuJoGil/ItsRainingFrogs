@@ -15,4 +15,9 @@ public class Buttons : MonoBehaviour
     {
         SceneManager.LoadScene("Intro");
     }
+
+    public void SkipCinematic()
+    {
+        SceneManager.LoadScene("PrimerNivel");
+    }
 }
