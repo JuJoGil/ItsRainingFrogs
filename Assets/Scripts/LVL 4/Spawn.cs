@@ -22,9 +22,7 @@ public class Spawn : MonoBehaviour
             {
                 a.transform.position = this.transform.position;
                 var aux = a.GetComponent<RockDamage>();
-                aux.life1 = GameObject.Find("Life");
-                aux.life2 = GameObject.Find("Life2");
-                aux.life3 = GameObject.Find("Life3");
+                
 
                 a.SetActive(true);
             }

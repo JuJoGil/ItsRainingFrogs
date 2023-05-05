@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class RockDamage : MonoBehaviour
 {
-    public GameObject life1, life2, life3, point;
+    public GameObject point;
     public float velocity;
     // Start is called before the first frame update
     void Start()
@@ -29,7 +29,8 @@ public class RockDamage : MonoBehaviour
             this.gameObject.SetActive(false);
         }
 
-
+        
+        
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -37,18 +38,7 @@ public class RockDamage : MonoBehaviour
         {
 
         }
-        if (Controller.Singleton.Life == 3)
-        {
-            life3.SetActive(false);
-        }
-        else if (Controller.Singleton.Life == 2)
-        {
-            life2.SetActive(false);
-        }
-        else if (Controller.Singleton.Life == 1)
-        {
-            life1.SetActive(false);
-        }
+        
         Controller.Singleton.Life = Controller.Singleton.Life - 1;
 
     }

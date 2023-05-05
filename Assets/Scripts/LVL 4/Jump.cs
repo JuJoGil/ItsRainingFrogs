@@ -13,7 +13,7 @@ public class Jump : MonoBehaviour
     public bool onAir, finish;
     SpriteRenderer _sr;
     public Sprite[] skins;
-
+    public GameObject life1, life2, life3;
     public Animator anim;
     // Start is called before the first frame update
     void Start()
@@ -28,7 +28,16 @@ public class Jump : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (Controller.Singleton.Life == 2)
+        {
+            life3.SetActive(false);
+        }
+        else if (Controller.Singleton.Life == 1)
+        {
+            life3.SetActive(false);
+            life2.SetActive(false);
+        }
+
         time = time + Time.deltaTime;
         if (time >= timeMax)
         {

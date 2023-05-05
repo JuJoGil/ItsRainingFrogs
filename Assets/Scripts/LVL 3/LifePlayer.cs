@@ -5,12 +5,17 @@ using UnityEngine.SceneManagement;
 
 public class LifePlayer : MonoBehaviour
 {
-    
+    Scene currentscene;
     
     // Start is called before the first frame update
     void Start()
     {
-        Controller.Singleton.Life = 3;
+        currentscene = SceneManager.GetActiveScene();
+        if(currentscene.name == "TercerNivel")
+        {
+            Controller.Singleton.Life = 3;
+        }
+        
     }
 
     // Update is called once per frame
