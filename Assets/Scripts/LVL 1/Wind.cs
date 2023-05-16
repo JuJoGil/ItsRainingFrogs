@@ -10,6 +10,7 @@ public class Wind : MonoBehaviour
     public bool timeController, IzWind, CenWind, DerWind;
     public int n;
     public Animator anim;
+    public AudioSource sound;
     
 
     // Start is called before the first frame update
@@ -61,6 +62,7 @@ public class Wind : MonoBehaviour
                     DerWind = false;
                     if (player.transform.position == points[n].transform.position)
                     {
+                        sound.Play();
                         Controller.Singleton.Velocity = 15;
 
 

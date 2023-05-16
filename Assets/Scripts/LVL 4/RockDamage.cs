@@ -6,6 +6,8 @@ public class RockDamage : MonoBehaviour
 {
     public GameObject life1, life2, life3, point;
     public float velocity;
+    public GameObject[] objeto;
+    public AudioSource sound;
     // Start is called before the first frame update
     void Start()
     {
@@ -33,12 +35,12 @@ public class RockDamage : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Player"))
-        {
-
-        }
+        objeto = GameObject.FindGameObjectsWithTag("Hurt");
+        sound = objeto[0].GetComponent<AudioSource>();
+        sound.Play(0);
         if (Controller.Singleton.Life == 3)
         {
+            
             life3.SetActive(false);
         }
         else if (Controller.Singleton.Life == 2)

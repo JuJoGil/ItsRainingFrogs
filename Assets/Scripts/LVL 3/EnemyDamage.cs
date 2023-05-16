@@ -7,6 +7,7 @@ public class EnemyDamage : MonoBehaviour
     public GameObject life1, life2, life3, point1, point2;
     public bool avanza;
     public float velocity;
+    public AudioSource sound;
     // Start is called before the first frame update
     void Start()
     {
@@ -40,7 +41,7 @@ public class EnemyDamage : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        
+        sound.Play();
         if(Controller.Singleton.Life == 3)
         {
             life3.SetActive(false);

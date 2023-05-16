@@ -9,7 +9,7 @@ public class ShopButtons : MonoBehaviour
     public GameObject[] hadicaps;
     public Button[] shopicons;
     public Sprite[] images;
-
+    public AudioSource[] sound;
     private void Start()
     {
         
@@ -129,10 +129,12 @@ public class ShopButtons : MonoBehaviour
 
     public void NormalSkin()
     {
+        sound[1].Play();
         PlayerPrefs.SetInt("Skin", 0);
     }
     public void RedSkin()
     {
+        sound[1].Play();
         if (PlayerPrefs.GetInt("IconRed") != 1)
         {
             if (PlayerPrefs.GetInt("NumeroBucles") >= 1)
@@ -150,6 +152,7 @@ public class ShopButtons : MonoBehaviour
     }
     public void PinkSkin()
     {
+        sound[1].Play();
         if (PlayerPrefs.GetInt("IconPink") != 1)
         {
             if (PlayerPrefs.GetInt("NumeroBucles") >= 5)
@@ -166,6 +169,7 @@ public class ShopButtons : MonoBehaviour
     }
     public void BrownSkin()
     {
+        sound[1].Play();
         if (PlayerPrefs.GetInt("IconBrown") != 1)
         {
             if (PlayerPrefs.GetInt("NumeroBucles") >= 5)
@@ -183,6 +187,7 @@ public class ShopButtons : MonoBehaviour
     }
     public void ChristmasSkin()
     {
+        sound[1].Play();
         if (PlayerPrefs.GetInt("IconChr") != 1)
         {
             if (PlayerPrefs.GetInt("NumeroBucles") >= 10)
@@ -200,6 +205,7 @@ public class ShopButtons : MonoBehaviour
     }
     public void BallSkin()
     {
+        sound[1].Play();
         if (PlayerPrefs.GetInt("IconBall") != 1)
         {
             if (PlayerPrefs.GetInt("NumeroBucles") >= 10)
@@ -217,6 +223,7 @@ public class ShopButtons : MonoBehaviour
     }
     public void InvertSkin()
     {
+        sound[1].Play();
         if (PlayerPrefs.GetInt("IconInv") != 1)
         {
             if (PlayerPrefs.GetInt("NumeroBucles") >= 10)
@@ -234,6 +241,7 @@ public class ShopButtons : MonoBehaviour
     }
     public void BotSkin()
     {
+        sound[1].Play();
         if (PlayerPrefs.GetInt("IconBot") == 0)
         {
             if (PlayerPrefs.GetInt("NumeroBucles") >= 10)
@@ -251,14 +259,17 @@ public class ShopButtons : MonoBehaviour
     }
     public void OpenShop()
     {
+        sound[0].Play();
         shop.SetActive(true);
     }
     public void CloseShop()
     {
+        sound[0].Play();
         shop.SetActive(false);
     }
     public void MoreSpeed()
     {
+        sound[1].Play();
         if (PlayerPrefs.GetInt("IconSpeed") != 1)
         {
             if (PlayerPrefs.GetInt("NumeroBucles") >= 20)
@@ -270,6 +281,7 @@ public class ShopButtons : MonoBehaviour
         }
         else
         {
+           
             if (PlayerPrefs.GetInt("Speed") == 0)
             {
                 PlayerPrefs.SetInt("Speed", 1);
@@ -283,6 +295,7 @@ public class ShopButtons : MonoBehaviour
     }
     public void MoreRocks()
     {
+        sound[1].Play();
         if (PlayerPrefs.GetInt("IconRock") != 1)
         {
             if (PlayerPrefs.GetInt("NumeroBucles") >= 10)
@@ -309,6 +322,7 @@ public class ShopButtons : MonoBehaviour
     }
     public void MoreBirds()
     {
+        sound[1].Play();
         if (PlayerPrefs.GetInt("IconBird") != 1)
         {
             if (PlayerPrefs.GetInt("NumeroBucles") >= 10)
@@ -335,6 +349,7 @@ public class ShopButtons : MonoBehaviour
     }
     public void MoreCloud()
     {
+        sound[1].Play();
         if (PlayerPrefs.GetInt("IconCloud") != 1)
         {
             if (PlayerPrefs.GetInt("NumeroBucles") >= 10)
@@ -361,6 +376,7 @@ public class ShopButtons : MonoBehaviour
     }
     public void MoreWind()
     {
+        sound[1].Play();
         if (PlayerPrefs.GetInt("IconWind") != 1)
         {
             if (PlayerPrefs.GetInt("NumeroBucles") >= 5)
@@ -387,6 +403,7 @@ public class ShopButtons : MonoBehaviour
     }
     public void Crown()
     {
+        sound[1].Play();
         if (PlayerPrefs.GetInt("IconCrown") != 1)
         {
             if (PlayerPrefs.GetInt("NumeroBucles") >= 100)

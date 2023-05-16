@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Enemy
   - Asteroid
+  - GameMusic
+  - Hurt
   layers:
   - Default
   - TransparentFX

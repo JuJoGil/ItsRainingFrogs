@@ -8,8 +8,9 @@ public class Cloud : MonoBehaviour
     public GameObject cloud, win;
     public float barUpgrade, barDown;
     Vector2 bar;
-    public bool finish;
+    public bool finish, end;
     public Animator anim;
+    public AudioSource sound;
 
     public float time, timeMax;
     // Start is called before the first frame update
@@ -38,6 +39,11 @@ public class Cloud : MonoBehaviour
         } else if (cloud.transform.localScale.x >= 4)
         {
             finish = true;
+            if (!end)
+            {
+                sound.Play();
+                end = true;
+            }
             time = time + Time.deltaTime;
             if(time > timeMax)
             {
