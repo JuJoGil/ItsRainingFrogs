@@ -5,9 +5,14 @@ using UnityEngine;
 public class AumentoVelocidad : MonoBehaviour
 {
     public int time, rock, bird, clud, wind;
+
+    
+
     // Start is called before the first frame update
     void Start()
     {
+        Controller.Singleton.VecesPasadas++;
+        DataBaseManager.SaveValue1(Controller.Singleton.VecesPasadas);
         if (PlayerPrefs.GetInt("Speed") == 1)
         {
             time = 2;

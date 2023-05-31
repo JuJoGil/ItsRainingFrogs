@@ -66,6 +66,13 @@ public sealed class Controller
         set { _skin = value; }
     }
 
+    private int _vecesPasadas;
+    public int VecesPasadas
+    {
+        get { return _vecesPasadas; }
+        set { _vecesPasadas = value; }
+    }
+
     //Creamos una referencia estática que apunta al Singleton
     private static Controller instance;
 
